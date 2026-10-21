@@ -1,0 +1,55 @@
+<header class="header-nav">
+  <div class="container nav-content">
+    <a routerLink="/" class="brand-link" (click)="closeMobileMenu()" aria-label="Página inicial Moto Force">
+      <img src="/icons/logo-motoforce.svg" alt="Moto Force Logo" width="160" height="38" class="brand-logo" />
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      <ul class="nav-list">
+        <li><a href="#destaques" class="nav-item">Novas</a></li>
+        <li><a href="#destaques" class="nav-item">Seminovas</a></li>
+        <li><a href="#simulacao" class="nav-item">Financiamento</a></li>
+        <li><a href="#depoimentos" class="nav-item">Sobre Nós</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <button
+        type="button"
+        class="btn-contact-whatsapp"
+        (click)="openWhatsAppContact()"
+        aria-label="Falar conosco via WhatsApp"
+      >
+        <img src="/icons/icon-whatsapp.svg" alt="" width="20" height="20" aria-hidden="true" />
+        <span>FALE CONOSCO</span>
+      </button>
+
+      <button
+        type="button"
+        class="mobile-menu-toggle"
+        (click)="toggleMobileMenu()"
+        [attr.aria-expanded]="isMobileMenuOpen()"
+        aria-label="Abrir menu de navegação"
+      >
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </div>
+
+  @if (isMobileMenuOpen()) {
+    <div class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Menu móvel">
+      <nav class="mobile-nav-links">
+        <a href="#destaques" (click)="closeMobileMenu()">Novas</a>
+        <a href="#destaques" (click)="closeMobileMenu()">Seminovas</a>
+        <a href="#simulacao" (click)="closeMobileMenu()">Financiamento</a>
+        <a href="#depoimentos" (click)="closeMobileMenu()">Sobre Nós</a>
+        <button type="button" class="btn-mobile-whatsapp" (click)="openWhatsAppContact(); closeMobileMenu()">
+          <img src="/icons/icon-whatsapp.svg" alt="" width="20" height="20" aria-hidden="true" />
+          <span>FALE CONOSCO</span>
+        </button>
+      </nav>
+    </div>
+  }
+</header>

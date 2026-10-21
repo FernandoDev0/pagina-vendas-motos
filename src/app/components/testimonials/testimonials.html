@@ -1,0 +1,52 @@
+<section id="depoimentos" class="testimonials-section" aria-label="Depoimentos de clientes">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">QUEM COMPRA, RECOMENDA!</h2>
+    </div>
+
+    <div class="testimonials-grid">
+      @for (item of testimonials(); track item.id) {
+        <article class="testimonial-item">
+          <!-- Real Customer Photo with Bike -->
+          <div class="photo-wrapper">
+            <img
+              [src]="item.avatar"
+              [alt]="'Cliente ' + item.name + ' com sua moto adquirida na Moto Force'"
+              width="240"
+              height="260"
+              loading="lazy"
+              class="customer-bike-photo"
+            />
+          </div>
+
+          <!-- Speech Bubble Testimonial Box -->
+          <div class="bubble-card">
+            <div class="stars-rating" aria-label="Avaliação: 5 estrelas">
+              <span class="star" aria-hidden="true">★</span>
+              <span class="star" aria-hidden="true">★</span>
+              <span class="star" aria-hidden="true">★</span>
+              <span class="star" aria-hidden="true">★</span>
+              <span class="star" aria-hidden="true">★</span>
+            </div>
+
+            <blockquote class="testimonial-quote">
+              <p>“{{ item.comment }}”</p>
+            </blockquote>
+
+            <div class="author-info">
+              <img
+                [src]="item.avatar"
+                [alt]="item.name"
+                width="36"
+                height="36"
+                loading="lazy"
+                class="author-avatar"
+              />
+              <span class="author-name">{{ item.name }}</span>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

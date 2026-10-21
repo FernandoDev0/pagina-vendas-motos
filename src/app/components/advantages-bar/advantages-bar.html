@@ -1,0 +1,17 @@
+<section class="advantages-section" aria-label="Diferenciais da Moto Force">
+  <div class="container">
+    <div class="advantages-grid">
+      @for (item of advantages(); track item.id) {
+        <div class="advantage-item">
+          <div class="icon-wrap" aria-hidden="true">
+            <img [src]="item.icon" alt="" width="32" height="32" loading="lazy" />
+          </div>
+          <div class="text-wrap">
+            <span class="advantage-title">{{ item.title }}</span>
+            <span class="advantage-highlight">{{ item.highlight }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,128 @@
+<section id="simulacao" class="simulator-section" aria-label="Simulador de Financiamento">
+  <div class="container simulator-container">
+    <div class="simulator-layout">
+      <!-- Left Column: Big Headline & Value Proposition -->
+      <div class="simulator-intro">
+        <h2 class="simulator-title">
+          SIMULE SEU<br />
+          FINANCIAMENTO<br />
+          <span class="highlight-orange">EM 2 MINUTOS</span>
+        </h2>
+        <p class="simulator-subtitle">
+          Simule com as melhores taxas do mercado e aprovação rápida.
+        </p>
+
+        <div class="simulator-benefits" aria-hidden="true">
+          <div class="benefit-tag">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Sem consulta ao score antecipada</span>
+          </div>
+          <div class="benefit-tag">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Taxa especial a partir de 1,19% a.m.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Form Card -->
+      <div class="simulator-card">
+        <form [formGroup]="form" (ngSubmit)="submitSimulation()" novalidate class="card-form">
+          <!-- Name Input -->
+          <div class="field-wrap">
+            <label for="sim-name" class="visually-hidden">Nome</label>
+            <input
+              id="sim-name"
+              type="text"
+              class="form-input"
+              formControlName="name"
+              placeholder="Nome"
+              autocomplete="name"
+              [class.has-error]="form.controls.name.touched && form.controls.name.invalid"
+            />
+          </div>
+
+          <!-- Phone Input -->
+          <div class="field-wrap">
+            <label for="sim-phone" class="visually-hidden">Celular</label>
+            <input
+              id="sim-phone"
+              type="tel"
+              class="form-input"
+              formControlName="phone"
+              placeholder="Celular"
+              autocomplete="tel"
+              [class.has-error]="form.controls.phone.touched && form.controls.phone.invalid"
+            />
+          </div>
+
+          <!-- Bike Selection -->
+          <div class="field-wrap">
+            <label for="sim-bike" class="visually-hidden">Moto de interesse</label>
+            <select
+              id="sim-bike"
+              class="form-input form-select"
+              formControlName="bikeId"
+              (change)="onBikeSelectChange($event)"
+            >
+              <option value="" disabled>Moto de interesse</option>
+              @for (bike of motorcycles(); track bike.id) {
+                <option [value]="bike.id">
+                  {{ bike.name }} (A partir de {{ formatCurrency(bike.price) }})
+                </option>
+              }
+            </select>
+          </div>
+
+          <!-- Installment Options Selection -->
+          <div class="installments-section">
+            <span class="installments-label">Prazo de parcelamento:</span>
+            <div class="installments-selector" role="radiogroup" aria-label="Número de parcelas">
+              @for (inst of availableInstallments(); track inst) {
+                <button
+                  type="button"
+                  class="btn-inst"
+                  [class.is-active]="currentInstallments() === inst"
+                  (click)="setInstallmentOption(inst)"
+                  [attr.aria-checked]="currentInstallments() === inst"
+                  role="radio"
+                >
+                  {{ inst }}x
+                </button>
+              }
+            </div>
+          </div>
+
+          <!-- Live Result Badge -->
+          <div class="calculation-preview">
+            <div class="calc-text">
+              <span class="calc-label">Parcela estimada:</span>
+              <span class="calc-value">
+                <strong>{{ currentInstallments() }}x de {{ formatCurrency(calculation().monthlyPayment) }}</strong>
+              </span>
+            </div>
+            <span class="calc-sub">Entrada: {{ formatCurrency(currentDownPayment()) }} (reajustável)</span>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn-submit-proposal">
+            SOLICITAR PROPOSTA RÁPIDA
+          </button>
+
+          <!-- Feedback message -->
+          @if (isSubmitted()) {
+            <div class="submit-feedback" role="alert">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>{{ submissionMessage() }}</span>
+            </div>
+          }
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

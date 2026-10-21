@@ -1,0 +1,218 @@
+:host {
+  display: block;
+  background-color: #ffffff;
+  padding-block: 4rem 5rem;
+}
+
+.catalog-section {
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: #111113;
+  text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    font-size: 2.75rem;
+  }
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1080px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.25rem;
+  }
+}
+
+.moto-card {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #e9e9ee;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+
+    .moto-image {
+      transform: scale(1.04);
+    }
+  }
+}
+
+.card-tag {
+  position: absolute;
+  top: 1.125rem;
+  left: 1.125rem;
+  z-index: 2;
+}
+
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #c92a2a;
+  box-shadow: 0 2px 8px rgba(201, 42, 42, 0.3);
+
+  &.tag-offer {
+    background-color: #b01a1a;
+  }
+
+  &.tag-last-unit {
+    background-color: #b01a1a;
+  }
+
+  .fire-dot {
+    font-size: 0.8125rem;
+    line-height: 1;
+  }
+}
+
+.corner-ribbon-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 110px;
+  height: 110px;
+  overflow: hidden;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.corner-ribbon {
+  position: absolute;
+  top: 24px;
+  right: -32px;
+  transform: rotate(45deg);
+  width: 150px;
+  background: linear-gradient(135deg, #ff5500, #ff6a00);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 0.625rem;
+  font-weight: 900;
+  text-align: center;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.card-image-box {
+  padding: 2.75rem 1.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 230px;
+
+  .moto-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+}
+
+.card-body {
+  padding: 1rem 1.75rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.moto-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #111113;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.25rem;
+}
+
+.moto-subtitle {
+  font-size: 0.8125rem;
+  color: #71717a;
+  margin-bottom: 1.25rem;
+  font-weight: 500;
+}
+
+.price-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  margin-bottom: 1.5rem;
+}
+
+.price-prefix {
+  font-size: 0.8125rem;
+  color: #52525b;
+  font-weight: 500;
+}
+
+.price-value {
+  font-family: var(--font-heading);
+  font-size: 1.625rem;
+  font-weight: 900;
+  color: #111113;
+  letter-spacing: -0.01em;
+}
+
+.card-action {
+  margin-top: auto;
+}
+
+.btn-card-action {
+  width: 100%;
+  padding: 0.9375rem 1.25rem;
+  border: none;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(255, 85, 0, 0.35);
+
+  &:hover {
+    background-color: #e64a00;
+    box-shadow: 0 6px 20px rgba(255, 85, 0, 0.5);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}

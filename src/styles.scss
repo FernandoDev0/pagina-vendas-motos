@@ -1,0 +1,115 @@
+/* ==========================================================================
+   MOTO FORCE DESIGN SYSTEM - TOKENS & GLOBAL STYLES
+   ========================================================================== */
+
+:root {
+  /* Brand Palette */
+  --color-primary: #ff5500;
+  --color-primary-hover: #e04b00;
+  --color-primary-glow: rgba(255, 85, 0, 0.35);
+  --color-whatsapp: #25d366;
+  --color-whatsapp-hover: #1eb956;
+
+  /* Neutrals & Dark Surface */
+  --color-bg-dark: #121214;
+  --color-bg-darker: #0d0d0f;
+  --color-bg-surface: #1a1a1e;
+  --color-border-dark: #27272a;
+
+  /* Light Surface (Destaques & Reviews) */
+  --color-bg-light: #ffffff;
+  --color-bg-light-alt: #f4f5f7;
+  --color-border-light: #e5e7eb;
+
+  /* Typography */
+  --color-text-light: #ffffff;
+  --color-text-muted-light: #a1a1aa;
+  --color-text-dark: #18181b;
+  --color-text-muted-dark: #71717a;
+
+  /* Geometry & Elevation */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 9999px;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.12), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 20px rgba(255, 85, 0, 0.35);
+
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* CSS Reset & Baseline */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-family);
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+/* A11y Focus Rings (WCAG AA Compliant) */
+*:focus-visible {
+  outline: 3px solid var(--color-primary) !important;
+  outline-offset: 3px !important;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Carbon Fiber Texture Pattern (Used in simulation section) */
+.carbon-fiber-pattern {
+  background:
+    radial-gradient(black 15%, transparent 16%) 0 0,
+    radial-gradient(black 15%, transparent 16%) 8px 8px,
+    radial-gradient(rgba(255, 255, 255, 0.07) 15%, transparent 20%) 0 1px,
+    radial-gradient(rgba(255, 255, 255, 0.07) 15%, transparent 20%) 8px 9px;
+  background-color: #121214;
+  background-size: 16px 16px;
+}
+
+/* Container Utilities */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}

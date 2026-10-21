@@ -1,0 +1,83 @@
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+*.tsbuildinfo
+
+# Dependencies
+/node_modules
+jspm_packages/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.swp
+*~
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/mcp.json
+.history/*
+
+# Angular cache
+/.angular
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+__screenshots__/
+
+# Local agent tooling (not part of the site)
+.agents/
+AGENTS.md
+.claude/
+.cursor/
+.grok/
+.gemini/
+
+# Design drafts, unused by the app
+/referencia/
+/public/scratch-*
+
+# Secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# Firebase local cache and debug output
+# firebase.json and .firebaserc stay in the repo
+.firebase/
+*-debug.log
+.runtimeconfig.json
+ui-debug.log
+firestore-debug.log
+pubsub-debug.log
+database-debug.log
+
+# System files
+.DS_Store
+Thumbs.db
+Desktop.ini
+ehthumbs.db

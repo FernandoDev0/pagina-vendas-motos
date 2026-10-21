@@ -1,0 +1,155 @@
+:host {
+  display: block;
+  background-color: #ffffff;
+  padding-block: 4.5rem 5.5rem;
+}
+
+.testimonials-section {
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: #111113;
+  text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    font-size: 2.75rem;
+  }
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+
+  @media (min-width: 1040px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+
+.testimonial-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+}
+
+.photo-wrapper {
+  width: 100%;
+  max-width: 220px;
+  height: 250px;
+  border-radius: 14px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+  @media (max-width: 639px) {
+    max-width: 100%;
+    height: 280px;
+  }
+
+  .customer-bike-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover .customer-bike-photo {
+    transform: scale(1.04);
+  }
+}
+
+.bubble-card {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #e5e5ea;
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem 1.25rem;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+
+  /* Speech bubble pointer on left for desktop */
+  @media (min-width: 640px) {
+    &::before {
+      content: '';
+      position: absolute;
+      left: -9px;
+      top: 2rem;
+      width: 16px;
+      height: 16px;
+      background-color: #ffffff;
+      border-left: 1px solid #e5e5ea;
+      border-bottom: 1px solid #e5e5ea;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.stars-rating {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 0.875rem;
+
+  .star {
+    color: #f59e0b;
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+}
+
+.testimonial-quote {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #3f3f46;
+  font-style: normal;
+
+  p {
+    margin: 0;
+  }
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  padding-top: 0.875rem;
+  border-top: 1px solid #f0f0f4;
+
+  .author-avatar {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-primary);
+  }
+
+  .author-name {
+    font-family: var(--font-heading);
+    font-size: 0.9375rem;
+    font-weight: 800;
+    color: #111113;
+  }
+}

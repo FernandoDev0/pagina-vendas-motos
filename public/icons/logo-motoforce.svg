@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" fill="none" class="motoforce-logo" aria-label="Moto Force Logo">
+  <!-- Flame & Speed Trails Icon -->
+  <g fill="#FF5500">
+    <!-- Top flame streak -->
+    <path d="M22 18C28 12 40 8 52 8C46 14 43 18 45 22C47 26 53 28 55 33C57 38 52 42 47 42C36 42 28 34 28 28C28 24 30 22 32 20C28 22 25 25 25 29C25 36 32 44 45 44C56 44 63 37 61 29C59 23 51 20 49 15C47 10 51 7 56 4C46 5 36 10 30 16C26 20 24 22 22 18Z" />
+    <!-- Trailing speed strokes -->
+    <path d="M8 26C12 22 18 20 26 20C22 23 20 25 21 28C22 31 26 32 27 34C28 37 25 39 22 39C16 39 12 34 12 31C10 34 13 38 18 38C23 38 27 35 26 31C25 28 21 26 20 24C19 22 21 20 23 19C18 20 14 22 11 25C9 27 7 28 8 26Z" opacity="0.9"/>
+    <path d="M2 38H18C15 41 12 43 7 43H2V38Z" opacity="0.8"/>
+    <path d="M12 48H32C28 52 22 55 14 55H12V48Z" opacity="0.85"/>
+  </g>
+
+  <!-- Typography Stacked (Exactly as in mockup) -->
+  <text x="74" y="32" font-family="'Inter', 'Arial Black', -apple-system, sans-serif" font-weight="900" font-size="28" font-style="italic" fill="#FFFFFF" letter-spacing="-0.5">MOTO</text>
+  <text x="74" y="60" font-family="'Inter', 'Arial Black', -apple-system, sans-serif" font-weight="900" font-size="28" font-style="italic" fill="#FF5500" letter-spacing="-0.5">FORCE</text>
+</svg>

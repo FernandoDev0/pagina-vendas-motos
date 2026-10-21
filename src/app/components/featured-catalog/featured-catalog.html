@@ -1,0 +1,78 @@
+<section id="destaques" class="catalog-section" aria-label="Catálogo de Destaques da Semana">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">DESTAQUES DA SEMANA</h2>
+    </div>
+
+    <div class="catalog-grid">
+      @for (moto of motorcycles(); track moto.id) {
+        <article class="moto-card">
+          <!-- Top Left Badge -->
+          @if (moto.tags.length > 0) {
+            <div class="card-tag">
+              <span class="tag-pill" [class.tag-offer]="moto.tags[0].type === 'offer'" [class.tag-last-unit]="moto.tags[0].type === 'last-unit'">
+                @if (moto.tags[0].type === 'offer') {
+                  <span class="fire-dot" aria-hidden="true">🔥</span>
+                }
+                {{ moto.tags[0].label }}
+              </span>
+            </div>
+          }
+
+          <!-- Corner Ribbon (for MT-07 and BMW G 310 GS) -->
+          @if (moto.hasRibbon) {
+            <div class="corner-ribbon-wrapper" aria-hidden="true">
+              <div class="corner-ribbon">{{ moto.ribbonText || 'ÚLTIMA UNIDADE' }}</div>
+            </div>
+          }
+
+          <!-- Motorcycle Image Showcase -->
+          <div class="card-image-box">
+            <img
+              [src]="moto.image"
+              [alt]="moto.name"
+              width="310"
+              height="230"
+              loading="lazy"
+              class="moto-image"
+            />
+          </div>
+
+          <!-- Card Info -->
+          <div class="card-body">
+            <h3 class="moto-title">{{ moto.name }}</h3>
+            <span class="moto-subtitle">anos de fabricação</span>
+
+            <div class="price-row">
+              <span class="price-prefix">A partir de</span>
+              <span class="price-value">{{ formatCurrency(moto.price) }}</span>
+            </div>
+
+            <!-- Action Button -->
+            <div class="card-action">
+              @if (moto.id === 'honda-cb-500x') {
+                <button
+                  type="button"
+                  class="btn-card-action"
+                  (click)="openDetailsModal(moto)"
+                  [attr.aria-label]="'Ver detalhes da ' + moto.name"
+                >
+                  QUERO ESTA
+                </button>
+              } @else {
+                <button
+                  type="button"
+                  class="btn-card-action"
+                  (click)="contactAboutBike(moto)"
+                  [attr.aria-label]="'Chamar no WhatsApp para ' + moto.name"
+                >
+                  Chamar no WhatsApp
+                </button>
+              }
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
